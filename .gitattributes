@@ -1,0 +1,4 @@
+*.ipynb linguist-language=Python
+*.ipynb linguist-detectable=true
+*.html linguist-detectable=false
+*.json linguist-detectable=false
