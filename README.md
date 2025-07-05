@@ -96,10 +96,17 @@ Failure         6      28
 
 ## Getting Started
 
-1. Clone the repository
-2. Install dependencies: `pip install -r requirements.txt`
-3. Run Jupyter notebooks in sequence
-4. Explore the analysis and model results
+1.  **Clone the repository:**
+    ```bash
+    git clone <https://github.com/harry7747/Rainfall-Prediction-Classifier/tree/main>
+    ```
+2.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+    *(Note: You may need to create a `requirements.txt` file listing libraries like pandas, scikit-learn, numpy, matplotlib, etc.)*
+3.  **Run the Jupyter Notebook or Python script:**
+    The main analysis and model training code can be found in `Rainfall_Prediction_Classifier.ipynb`.
 
 ## Project Structure
 
