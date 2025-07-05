@@ -16,37 +16,17 @@ The dataset includes SpaceX launch information with features like:
 
 ## Machine Learning Pipeline
 
-1. **Data Collection**: 
-   - Extracted launch data from SpaceX REST API
-   - Web scraped additional launch information from Wikipedia
-   - Combined datasets for comprehensive feature set
+## Machine Learning Pipeline
 
-2. **Data Cleaning & Preprocessing**:
-   - Handled missing values using median imputation for numerical features
-   - Created binary target variable (1 = successful landing, 0 = failed landing)
-   - Removed outliers and inconsistent data entries
+1. **Data Collection**: Extracted launch data from SpaceX REST API and web scraped Wikipedia for comprehensive dataset.
 
-3. **Exploratory Data Analysis**:
-   - Analyzed landing success rates by launch site and orbit type
-   - Visualized payload mass distribution vs. landing outcomes
-   - Identified temporal trends in landing success over flight numbers
+2. **Data Preprocessing**: Applied median imputation for missing values, created binary target variable, and removed outliers.
 
-4. **Feature Engineering**:
-   - One-hot encoded categorical variables (launch site, orbit, booster version)
-   - Standardized numerical features using StandardScaler
-   - Created interaction features between payload mass and orbit type
+3. **Feature Engineering**: One-hot encoded categorical variables (launch site, orbit, booster version) and standardized numerical features using StandardScaler.
 
-5. **Model Training & Validation**:
-   - Split data into 80% training and 20% testing sets
-   - Applied 5-fold cross-validation for robust performance estimation
-   - Implemented GridSearchCV for hyperparameter tuning
-   - Trained multiple algorithms with optimized parameters
+4. **Model Training**: Used 80/20 train-test split with 5-fold cross-validation. Applied GridSearchCV for hyperparameter tuning across all algorithms.
 
-6. **Model Evaluation**:
-   - Calculated confusion matrices for each model
-   - Evaluated precision, recall, F1-score, and accuracy
-   - Generated ROC curves and calculated AUC scores
-   - Selected best model based on balanced performance metrics
+5. **Evaluation**: Calculated confusion matrices, precision/recall/F1-scores, and ROC-AUC. Selected best model based on balanced performance metrics.
 
 ## Models Used
 
