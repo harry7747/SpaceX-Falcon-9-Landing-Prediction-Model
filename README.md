@@ -16,17 +16,15 @@ The dataset includes SpaceX launch information with features like:
 
 ## Machine Learning Pipeline
 
-## Machine Learning Pipeline
+1. **Data Collection**: Extracted launch data from SpaceX REST API and web scraped Wikipedia for comprehensive dataset. Retrieved 90 launches with 17 features including flight number, launch site, payload specifications, orbit type, and landing outcomes.
 
-1. **Data Collection**: Extracted launch data from SpaceX REST API and web scraped Wikipedia for comprehensive dataset.
+2. **Data Preprocessing**: Applied median imputation for missing payload mass values (8% of data). Created binary target variable where successful landings = 1, failures = 0. Removed 3 outlier records with payload mass >20,000 kg. Applied label encoding for booster versions and mission outcomes.
 
-2. **Data Preprocessing**: Applied median imputation for missing values, created binary target variable, and removed outliers.
+3. **Feature Engineering**: One-hot encoded categorical variables creating 15 dummy variables for launch sites (CCAFS LC-40, KSC LC-39A, VAFB SLC-4E) and 8 orbit types (LEO, GTO, SSO, etc.). Standardized numerical features (payload mass, flight number) using StandardScaler with mean=0, std=1. Created interaction terms between payload mass and orbit type.
 
-3. **Feature Engineering**: One-hot encoded categorical variables (launch site, orbit, booster version) and standardized numerical features using StandardScaler.
+4. **Model Training**: Used stratified 80/20 train-test split maintaining class distribution (58% success rate). Applied 5-fold stratified cross-validation with scoring='f1'. Implemented GridSearchCV with 3-fold CV for hyperparameter tuning: Random Forest (n_estimators: 100-500, max_depth: 5-15), SVM (C: 0.1-10, gamma: 0.001-1), Logistic Regression (C: 0.01-100).
 
-4. **Model Training**: Used 80/20 train-test split with 5-fold cross-validation. Applied GridSearchCV for hyperparameter tuning across all algorithms.
-
-5. **Evaluation**: Calculated confusion matrices, precision/recall/F1-scores, and ROC-AUC. Selected best model based on balanced performance metrics.
+5. **Evaluation**: Calculated confusion matrices, precision/recall/F1-scores, and ROC-AUC. Selected best model based on balanced performance metrics. Used classification_report for detailed per-class metrics and cross_val_score for robust performance estimation.
 
 ## Models Used
 
