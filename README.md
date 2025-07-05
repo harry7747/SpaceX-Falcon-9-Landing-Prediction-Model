@@ -36,9 +36,9 @@ The dataset includes SpaceX launch information with features like:
 
 ## Technologies
 
-- **Python**: Pandas, NumPy, Scikit-learn
+- **Python**: Pandas, NumPy, Scikit-learn, Plotly, Dash
 - **Visualization**: Matplotlib, Seaborn
-- **Environment**: Jupyter Notebooks
+- **Environment**: Jupyter Notebooks, Python Files
 
 ## Key Results
 
